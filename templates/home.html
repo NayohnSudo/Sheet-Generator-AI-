@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Revision Sheet Generator</title>
+    <style>
+      .container {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: rgb(2, 73, 97);
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+
+      button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 10px 20px 0px rgb(3, 58, 76);
+      }
+
+      button:active {
+        transform: translateY(3px);
+        box-shadow: 0px 0px 0px 0px rgb(1, 50, 66);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="{{ url_for('generate') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Generate Revision Sheet</button>
+      </form>
+    </div>
+  </body>
+</html>
